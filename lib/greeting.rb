@@ -11,3 +11,47 @@
 # afternoon: 12 - 19: Good Afternoon!
 # night: 20 - 05: Good night
 
+class Greeting
+  
+  def initialize(hour)
+    @hour = hour.to_i
+  end
+
+
+  def say
+    if morning?
+      "Good Morning!"
+    elsif afternoon?
+      "Good Afternoon!"
+    elsif night?
+      "Good Night!"
+    end
+  end
+
+
+  def morning?
+    if (6..11).to_a.include?(@hour)
+      true
+    else 
+      false
+    end
+  end
+
+
+  def afternoon?
+    if (12..19).to_a.include?(@hour)
+      true
+    else 
+      false
+    end
+  end
+
+
+  def night?
+    if (morning? == false) && (afternoon? == false)
+      true
+    else 
+      false
+    end
+  end
+end

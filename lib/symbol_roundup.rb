@@ -12,3 +12,12 @@
 # Think about how you might test to see if an object's class is a Symbol.
 # You can read about Ruby symbols here:
 # http://ruby-doc.org/core-2.0.0/Symbol.html
+
+class Array
+  
+    def symbol_roundup
+      self.select do |element|
+        element.is_a? Symbol
+      end
+    end 
+  end 
